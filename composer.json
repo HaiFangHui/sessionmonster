@@ -1,10 +1,19 @@
 {
     "name": "haifanghui/session-monster",
-    "description": "A monster eating session cookies",
+    "type": "library",
+    "description": "A monster eating session cookies - works with Varnish + Laravel",
+    "keywords": ["Laravel", "Varnish", "Session Storage"],
+    "homepage": "https://www.github.com/HaiFangHui/sessionmonster",
     "authors": [
         {
             "name": "Quan Sun",
-            "email": "qsun@haifanghui.com"
+            "email": "qsun@haifanghui.com",
+            "homepage": "https://github.com/qsun"
+        },
+        {
+            "name": "HaiFangHui",
+            "email": "eng@haifanghui.com",
+            "homepage": "http://www.haifanghui.com"
         }
     ],
     "require": {
@@ -19,5 +28,6 @@
             "HaiFangHui\\SessionMonster\\": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "license": "LGPL-2.1",
 }
