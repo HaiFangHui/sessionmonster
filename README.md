@@ -24,4 +24,19 @@ The target of this project is to delay the session cookie from being set, until 
 For example, when a new client (A) comes to http://www.haifanghui.com/, he then goes to http://www.haifanghui.com/a/ to view all the news about Australian property market, during the whole process, there should be no session cookie set in his browser. However, when A goes to http://www.haifanghui.com/login and login, there _should be_ a session created - since the user's ID would be stored in it.
 
 
+# How it works?
+
+When SessionMonster registers itself `SessionMonsterServiceProvider`, it inject a closure to Laravel's response hook, it would figure out if there is any valuable session data in the session storage for each of the response. 
+
+When SessionMonster figures out there is no data in the response session, it would send a `X-No-Session: yeah` header with the response. A correspondent Varnish VCL section looks like this,
+
+```
+    if (beresp.http.X-No-Session ~ "yeah") {
+        unset beresp.http.set-cookie;
+    }
+```
+
+This would strip all the cookie from response if `X-No-Session` header is `yeah`.
+
 This project is used in HaiFangHui.com production site, and it serves us pretty good.
+
