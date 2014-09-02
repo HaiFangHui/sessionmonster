@@ -1,0 +1,23 @@
+{
+    "name": "haifanghui/session-monster",
+    "description": "A monster eating session cookies",
+    "authors": [
+        {
+            "name": "Quan Sun",
+            "email": "qsun@haifanghui.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "HaiFangHui\\SessionMonster\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
