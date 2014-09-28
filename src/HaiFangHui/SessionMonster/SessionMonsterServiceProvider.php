@@ -50,7 +50,7 @@ class SessionMonsterServiceProvider extends ServiceProvider {
                     unset($session['flash']);
                 }
 
-                if (count($session) > 1) {
+                if (count($session) >= 1) {
                     return;
                 }
                 
